@@ -56,6 +56,7 @@
 ;;     package is loaded (see 'C-h v VARIABLE' to look up their documentation).
 ;;   - Setting doom variables (which start with 'doom-' or '+').
 ;;
+;;
 ;; Here are some additional functions/macros that will help you configure Doom.
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -74,6 +75,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+;;set relative line numbers
+(setq display-line-numbers-type 'relative)
+
 
 ;; copilot
 (use-package! copilot
