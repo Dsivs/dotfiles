@@ -80,6 +80,10 @@
 ;;set relative line numbers
 (setq display-line-numbers-type 'relative)
 
+;;set line number color
+(custom-set-faces!
+  '(line-number :foreground "#7f848e")
+  '(line-number-current-line :foreground "#ffffff"))
 
 ;; copilot
 (use-package! copilot
