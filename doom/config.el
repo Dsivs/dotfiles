@@ -98,3 +98,26 @@
       :n "C-l" #'enlarge-window-horizontally
       :n "C-j" #'shrink-window
       :n "C-k" #'enlarge-window)
+
+(setq projectile-switch-project-action #'projectile-dired)
+
+;; Accelerate Dirvish
+(use-package! dirvish
+  :init
+  (dirvish-override-dired-mode)
+  :config
+  ;; keep UI light
+  (setq dirvish-attributes
+        '(vc-state file-size collapse subtree-state))
+
+  ;; disable expensive previews
+  (setq dirvish-preview-dispatchers nil)
+
+  ;; reduce extra metadata work
+  (setq dirvish-hide-details t)
+
+  ;; do not auto-expand huge trees
+  (setq dirvish-subtree-state-style 'nerd)
+
+  ;; faster dired listing
+  (setq dired-listing-switches "-alh --group-directories-first"))

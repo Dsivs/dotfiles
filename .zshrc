@@ -1,5 +1,4 @@
 
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -10,11 +9,14 @@
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
+	#zsh-autosuggestions
 	dotbare
+	#zsh-autocomplete
+	zsh-autosuggestions
 	)
 export ZSH="$HOME/.oh-my-zsh"
-
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH=/Library/TeX/texbin:$PATH
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -46,20 +48,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-export PATH="$HOME/opt/anaconda3/bin:$PATH"
-source "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
+
+# source "$HOME/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source /Users/huangweide/opt/anaconda3/etc/profile.d/conda.sh
+
+# export PATH="/Users/huangweide/opt/anaconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
+
+# Created by `pipx` on 2025-07-28 09:45:32
+export PATH="$PATH:/Users/huangweide/.local/bin"
