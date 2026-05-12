@@ -121,3 +121,15 @@
 
   ;; faster dired listing
   (setq dired-listing-switches "-alh --group-directories-first"))
+
+;; accelerate lsp
+(after! lsp-mode
+  (setq lsp-file-watch-ignored-directories
+        '("[/\\\\]\\.git\\'"
+          "[/\\\\]\\.venv\\'"
+          "[/\\\\]venv\\'"
+          "[/\\\\]node_modules\\'"
+          "[/\\\\]__pycache__\\'"
+          "[/\\\\]build\\'"
+          "[/\\\\]dist\\'"
+          "[/\\\\]data\\'")))
