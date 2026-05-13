@@ -133,3 +133,36 @@
           "[/\\\\]build\\'"
           "[/\\\\]dist\\'"
           "[/\\\\]data\\'")))
+
+;; diasble autoreview   
+(after! dirvish
+  (setq dirvish-preview-dispatchers nil))
+
+;;enable package pyvenv
+(use-package! pyvenv
+  :config
+  (pyvenv-mode 1))
+
+;; Auto reload files changed outside Emacs
+(global-auto-revert-mode 1)
+
+;; Also revert non-file buffers
+(setq global-auto-revert-non-file-buffers t)
+
+;; Quiet auto revert
+(setq auto-revert-verbose nil)
+
+;; Auto save when idle
+(auto-save-visited-mode 1)
+
+;; Save after 1 second idle
+(setq auto-save-visited-interval 1)
+
+;; tresitter path
+(setq treesit-language-source-alist
+      '((python "https://github.com/tree-sitter/tree-sitter-python" "v0.20.4")
+        (bash "https://github.com/tree-sitter/tree-sitter-bash")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (json "https://github.com/tree-sitter/tree-sitter-json")
+        (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+        (c "https://github.com/tree-sitter/tree-sitter-c")))
